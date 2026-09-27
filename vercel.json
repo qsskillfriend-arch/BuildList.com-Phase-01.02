@@ -328,5 +328,19 @@
         }
       ]
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron-rebuild",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron-tenders",
+      "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron-reminders",
+      "schedule": "0 6 * * *"
+    }
   ]
 }

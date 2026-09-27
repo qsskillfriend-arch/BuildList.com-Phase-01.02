@@ -1,6 +1,6 @@
 # BuildList.com — launch version
 
-This is the **launch version**: one advertising position (the top banner on the directory), no online payments, no public sign-in, and no review system. Both are kept in the code, switched off, for a later release.
+This is the **launch version**: one advertising position (the banner at the top of the homepage), no public sign-in, and no review system. Both are kept in the code, switched off, for a later release.
 
 **Follow BuildList-Deployment-Guide-Launch.pdf** for the full step-by-step deployment.
 
@@ -120,42 +120,80 @@ or changing any, redeploy — Vercel does not apply them to an existing build.
 The build refuses to run if `SUPABASE_ANON_KEY` is set to the service key.
 
 
-## Database files, in order
+## Online payments (MTN MoMo, Airtel Money, cards)
 
-`schema.sql`, `seed.sql`, `PATCH-01` through `PATCH-07`, then `seed-ads.sql`
-(which sets up the directory banner position).
+Payments go through **Flutterwave**. Until the keys below are set, every
+"Upgrade" and "Feature" button still works: the request reaches the team as
+an **UPGRADE REQUEST** so an invoice can be sent, and the customer is told so.
 
-
-## Email notifications for every form
-
-Every form on the site emails you the moment it is submitted: listing
-applications, claims, removal requests, quotation requests, tender and
-vacancy submissions, advertising enquiries, upgrade requests, alert
-sign-ups, event and project submissions, and Tender Pro interest.
-
-Set in Vercel, then redeploy:
+### Switching it on
+1. Open a Flutterwave business account and complete their verification (KYC).
+2. Flutterwave dashboard → **Settings → API keys**: copy the **Secret key**.
+3. **Settings → Webhooks**: set the URL to `https://buildlist.com/api/pay-webhook`
+   and choose a **Secret hash** (any long random string).
+4. Add to Vercel and redeploy:
 
 | Name | Value | Sensitive |
 |---|---|---|
-| `RESEND_API_KEY` | From resend.com | **Yes** |
-| `FORM_NOTIFY_EMAIL` | Your address; several separated by commas | No |
-| `FORM_FROM_EMAIL` | `BuildList.com <hello@buildlist.com>`, on a domain verified in Resend | No |
+| `FLW_SECRET_KEY` | Flutterwave secret key | **Yes** |
+| `FLW_WEBHOOK_HASH` | The secret hash you chose in step 3 | **Yes** |
+| `CRON_SECRET` | Any long random string (lets the nightly rebuild run) | **Yes** |
 
-The subject names the form and the sender; urgent ones start with ●.
-**Reply** goes straight to the person, and a WhatsApp button opens a chat.
-Each submission is also saved in Supabase → `submissions`.
+5. Run `supabase/PATCH-04.sql` (the orders table and expiry dates).
+6. Make one real payment of the cheapest item yourself, and check it appears
+   under **Portal → Orders** as paid and switched on.
+
+### What each purchase does, automatically
+| Product | Price (UGX) | Switches on |
+|---|---|---|
+| Verified / Premium / Platinum | 150,000 / 400,000 / 1,500,000 a year | The firm's tier, for 12 months (early renewals add to the end date) |
+| Featured vacancy | 50,000 | Pinned and featured for 30 days |
+| Category sponsorship | 250,000 a month | A campaign in the portal awaiting the sponsor's logo |
+
+Prices are set in `lib/pay-core.js`. The site never sends a price: the
+server decides, so it cannot be edited in the browser. Every payment is
+re-checked with Flutterwave before anything switches on, and a payment is
+never fulfilled twice. A nightly rebuild at 03:00 lets expired tiers and
+featured vacancies lapse.
+
+
+## Tender Pro (paid tender alerts)
+
+UGX 50,000 a month or 450,000 a year. Sold from the Tenders page. A
+subscriber chooses the sectors they follow and gets:
+
+- **A 7am email every morning** with each new tender in those sectors
+  (no email on days with nothing new)
+- **A reminder three days before** any matching tender closes
+- **A private calendar feed** of every matching deadline, which Google
+  Calendar, Outlook and iPhone subscribe to and refresh themselves
+
+It runs by itself once switched on. Needs: `PATCH-06.sql`, the payment keys,
+`RESEND_API_KEY`, `FORM_FROM_EMAIL` and `CRON_SECRET`. Each subscriber gets a
+welcome email with their calendar link the moment they pay.
+
+**What makes it worth paying for is tenders being posted promptly.** Add new
+notices in the portal the day they are advertised: a morning email that
+arrives after a contractor has already seen the notice elsewhere is not worth
+UGX 50,000.
+
+To change a subscriber's sectors, edit their row in Supabase →
+`tender_subscriptions`.
+
+
+
+## Database files, in order
+
+`schema.sql`, `seed.sql`, `PATCH-01` through `PATCH-07`, then `seed-ads.sql`
+(which sets up the single homepage banner position).
 
 ## What is switched off in this version
 
-- **Online payments.** Every Upgrade, Feature and booking button sends an
-  **UPGRADE REQUEST** email with the firm, plan and price. Send an invoice;
-  once paid, set the tier (or featured vacancy) in the portal and Publish.
-- **Tender Pro** shows as *coming soon* and collects interest by email.
-- **Adverts** everywhere except the top banner on the directory. The Advertise page
-  has a small **Register your interest** section with your contact details; it emails you an
-  ADVERTISING ENQUIRY.
-- **Firm sign-in and dashboard.** Owners use the claim form; staff confirm by
-  calling the number on the listing.
-- **Reviews.** Hidden and refused by the server.
-
-All of these are in the full version (`buildlist-VERCEL.zip`) for a later release.
+- **Adverts** everywhere except the homepage banner. The Advertise page sells
+  what exists at launch: the homepage banner, featured firms, digest sponsorship
+  and sponsored stories.
+- **Firm sign-in and dashboard.** Owners claim their listing with the claim form;
+  staff confirm by calling the number on the listing and make changes for them.
+  Quotation requests still reach staff with the matching firms listed.
+- **Reviews.** Hidden on the site and refused by the server. To bring them back
+  later: `FEATURE_REVIEWS=on`, then redeploy.

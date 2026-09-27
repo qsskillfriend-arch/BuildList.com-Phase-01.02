@@ -865,6 +865,8 @@ const SECTIONS = [
       count:()=>DB.firms.filter(f=>f.featured).length },
   { id:'tiers',     label:'Tiers',        group:'Revenue',   perm:'ads' },
   { id:'ads',       label:'Advertising',  group:'Revenue',   perm:'ads' },
+  { id:'orders',    label:'Orders',       group:'Revenue',   perm:'analytics',
+      count:()=>(DB.orders||[]).filter(o=>o.status==='paid'&&thisMonth(o.paid_at)).length },
   { id:'analytics', label:'Analytics',    group:'Revenue',   perm:'analytics' },
   { id:'staff',     label:'Staff',        group:'Admin',     perm:'staff',    count:()=>DB.staff.length },
   { id:'legal',     label:'Legal pages',  group:'Admin',     perm:'staff' },

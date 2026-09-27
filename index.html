@@ -1881,22 +1881,6 @@ button, .nav-link, .mobile-nav-link, .footer-col a, .header-top a { font: inheri
 .hero-search input { min-width: 0; flex: 1 1 180px; }
 .hero-search select { min-width: 0; flex: 0 1 190px; max-width: 220px; text-overflow: ellipsis; }
 .hero-search .btn { flex-shrink: 0; }
-
-/* Advertise: a small register-interest section */
-.adv-interest { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:22px; align-items:center;
-  margin:22px 0 6px; padding:18px 20px; border:1px solid rgba(196,154,22,.45); border-radius:var(--r-lg);
-  background:linear-gradient(90deg,#FFFBEF,#FFF6DF); }
-.adv-interest h3 { font-size:1.05rem; margin:0 0 4px; }
-.adv-interest p { font-size:.84rem; color:var(--slate); margin:0 0 8px; line-height:1.5; }
-.ai-contacts { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px 16px; font-size:.86rem; }
-.ai-contacts a { color:var(--forest); font-weight:600; text-decoration:none; }
-.ai-contacts a:hover { text-decoration:underline; }
-.ai-wa { color:#1FA855 !important; }
-.ai-form { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-.ai-form .form-input { margin:0; padding:9px 11px; font-size:.86rem; min-width:0; }
-.ai-form .btn { justify-content:center; }
-@media (max-width:860px) { .adv-interest { grid-template-columns:1fr; } }
-@media (max-width:460px) { .ai-form { grid-template-columns:1fr; } }
 </style>
 <!-- Start the data fetches while the page is still parsing. On a
      Ugandan mobile connection the round trip costs more than the bytes. -->
@@ -2062,6 +2046,10 @@ button, .nav-link, .mobile-nav-link, .footer-col a, .header-top a { font: inheri
     </div>
   </div>
 
+  <!-- Homepage Leaderboard Ad -->
+  <div class="container" style="padding-top:28px;padding-bottom:0">
+    <div class="ad-unit ad-leaderboard ad-sponsored" data-ad="home-leaderboard"></div>
+  </div>
 
   <!-- Categories -->
   <section class="section">
@@ -2250,11 +2238,6 @@ button, .nav-link, .mobile-nav-link, .footer-col a, .header-top a { font: inheri
     </div>
   </div>
 
-  <!-- The directory's top banner: seen by everyone about to search -->
-  <div class="container" style="padding:16px 0 0">
-    <div class="ad-unit ad-leaderboard ad-sponsored" data-ad="directory-leaderboard"></div>
-  </div>
-
   <!-- Search bar -->
   <div style="background:var(--white);border-bottom:1px solid var(--border);padding:16px 0">
     <div class="container">
@@ -2386,7 +2369,7 @@ button, .nav-link, .mobile-nav-link, .footer-col a, .header-top a { font: inheri
         <div class="dir-count" id="tenderCount" role="status" style="margin-bottom:12px">&mdash;</div>
         <div id="tendersFull"></div>
         <div class="tpro" id="tenderPro">
-          <div class="tpro-head"><span class="tpro-badge">TENDER PRO · COMING SOON</span>
+          <div class="tpro-head"><span class="tpro-badge">TENDER PRO</span>
             <h3>Never be the last to hear about a tender</h3></div>
           <ul class="tpro-list">
             <li><b>A 7am email every morning</b> with each new tender in the sectors you follow</li>
@@ -2394,9 +2377,10 @@ button, .nav-link, .mobile-nav-link, .footer-col a, .header-top a { font: inheri
             <li><b>Every deadline in your calendar</b> — Google, Outlook or iPhone, updating itself</li>
           </ul>
           <div class="tpro-buy">
-            <button type="button" class="btn btn-primary" onclick="openCheckout('tender-pro-month')">Register my interest</button>
+            <button type="button" class="btn btn-primary" onclick="openCheckout('tender-pro-month')">UGX 50,000 a month</button>
+            <button type="button" class="btn btn-outline" onclick="openCheckout('tender-pro-year')">UGX 450,000 a year — save 25%</button>
           </div>
-          <p class="tpro-small">UGX 50,000 a month when it opens. Register now and we will email you the day it launches.</p>
+          <p class="tpro-small">Pay by MTN Mobile Money, Airtel Money or card. Cancel any time by simply not renewing.</p>
         </div>
 
         <div class="panel" id="alerts" style="margin-top:34px;scroll-margin-top:90px">
@@ -2695,34 +2679,6 @@ button, .nav-link, .mobile-nav-link, .footer-col a, .header-top a { font: inheri
           <h2 style="margin-top:8px">Choose the Right Package</h2>
         </div>
         <div class="ad-packages-grid" id="adPackages"></div>
-
-          <!-- Register interest: small, and every route to the team at once -->
-          <section class="adv-interest" id="adInterest" aria-labelledby="adInterestTitle">
-            <div class="ai-text">
-              <h3 id="adInterestTitle">Register your interest in advertising</h3>
-              <p>Tell us what you have in mind and we will come back to you within one working day with
-                availability and a quotation. No commitment.</p>
-              <ul class="ai-contacts">
-                <li>✉ <a href="mailto:advertising@buildlist.com" data-site-mail-ads>advertising@buildlist.com</a></li>
-                <li data-site-if="phone">☎ <a href="#" data-site-tel><span data-site="phone"></span></a></li>
-                <li data-site-if="whatsapp"><a href="#" data-site-wa class="ai-wa">WhatsApp us</a></li>
-              </ul>
-            </div>
-            <form class="ai-form" name="advertising-enquiry"
-              onsubmit="return handleForm(event,'Thank you. We will reply within one working day with availability and a quotation.')">
-              <input type="hidden" name="intent" value="register interest">
-              <input class="form-input" name="name" required placeholder="Your name" autocomplete="name" aria-label="Your name">
-              <input class="form-input" name="company" required placeholder="Company" autocomplete="organization" aria-label="Company">
-              <input class="form-input" name="phone" required placeholder="Phone or WhatsApp" autocomplete="tel" aria-label="Phone or WhatsApp">
-              <input class="form-input" name="email" type="email" placeholder="Email (optional)" autocomplete="email" aria-label="Email">
-              <select class="form-input form-select" name="package" aria-label="What interests you">
-                <option value="Not sure yet">What interests you?</option>
-                <option>Directory Banner</option><option>Featured Firm</option><option>Digest Sponsor</option>
-                <option>Sponsored Story</option><option>Launch Partner</option>
-              </select>
-              <button class="btn btn-primary" type="submit">Register interest</button>
-            </form>
-          </section>
       </div>
 
       <div style="background:var(--forest);border-radius:var(--r-lg);padding:40px;text-align:center">
@@ -2824,7 +2780,7 @@ button, .nav-link, .mobile-nav-link, .footer-col a, .header-top a { font: inheri
               <span style="flex-shrink:0"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-info"></use></svg></span>
               <span>A firm we can reach and confirm receives a <strong>Verified badge</strong>.
               We telephone the number above and check the company against the public URSB register
-              before publishing — the badge is a check we performed, never something you can buy.</span>
+              before publishing \u2014 the badge is a check we performed, never something you can buy.</span>
             </div>
           </div>
 
@@ -4329,8 +4285,8 @@ const PRODUCTS = {
   'tier-platinum':    { label: 'Platinum listing', price: 1500000, per: 'per year', needs: 'firm' },
   'featured-job':     { label: 'Featured vacancy', price: 50000, per: 'for 30 days', needs: 'job' },
   'category-sponsor': { label: 'Category sponsorship', price: 250000, per: 'per month', needs: 'category' },
-  'tender-pro-month': { label: 'Tender Pro', price: 50000, per: 'per month', needs: 'sectors', interest: true },
-  'tender-pro-year':  { label: 'Tender Pro', price: 450000, per: 'per year', needs: 'sectors', interest: true }
+  'tender-pro-month': { label: 'Tender Pro', price: 50000, per: 'per month', needs: 'sectors' },
+  'tender-pro-year':  { label: 'Tender Pro', price: 450000, per: 'per year', needs: 'sectors' }
 };
 
 function checkoutBox() {
@@ -4371,8 +4327,7 @@ function openCheckout(product, target) {
       <div class="modal-head"><h3 id="payTitle">${esc(pr.label)}</h3>
         <button class="btn btn-outline btn-sm" onclick="closeCheckout()">Close</button></div>
       <div class="modal-body">
-        <div class="pay-price">${pr.interest ? '<b>Coming soon</b> <span>UGX 50,000 a month when it opens</span>'
-          : `<b>UGX ${pr.price.toLocaleString()}</b> <span>${esc(pr.per)}</span>`}</div>
+        <div class="pay-price"><b>UGX ${pr.price.toLocaleString()}</b> <span>${esc(pr.per)}</span></div>
         <form onsubmit="return submitCheckout(event,'${esc(product)}')">
           ${pick}
           <div class="form-grid">
@@ -4384,10 +4339,11 @@ function openCheckout(product, target) {
           <div class="form-group"><label class="form-label" for="payEmail">Email, for the receipt</label>
             <input class="form-input" id="payEmail" type="email" required autocomplete="email"></div>
           <div id="payMsg"></div>
-          <button class="btn btn-primary pay-go" type="submit" id="payGo">${pr.interest ? 'Register my interest' : 'Send my request'}</button>
-          <p class="disclosure" style="margin-top:10px">${pr.interest
-            ? 'We will email you when Tender Pro opens. There is nothing to pay now.'
-            : 'We will send you an invoice within one working day. Pay by bank transfer or Mobile Money, and it is switched on as soon as your payment reaches us.'}</p>
+          <button class="btn btn-primary pay-go" type="submit" id="payGo">Continue to payment</button>
+          <div class="pay-methods">MTN Mobile Money \u00b7 Airtel Money \u00b7 Visa \u00b7 Mastercard</div>
+          <p class="disclosure" style="margin-top:10px">Payments are handled securely by Flutterwave; BuildList never
+            sees your PIN or card details. ${pr.needs === 'firm'
+              ? 'Your tier switches on as soon as payment clears.' : 'It switches on as soon as payment clears.'}</p>
         </form>
       </div>
     </div>`;
@@ -4423,33 +4379,67 @@ async function submitCheckout(e, product) {
     name: document.getElementById('payName').value.trim(),
     phone: document.getElementById('payPhone').value.trim(),
     email: document.getElementById('payEmail').value.trim() };
-  /* Launch version: no online payments. The request reaches the team
-     by email; they send an invoice and switch it on once paid. */
   const btn = document.getElementById('payGo');
-  btn.disabled = true; btn.textContent = 'Sending\u2026';
-  const firmName = pr.needs === 'firm' ? ((DATA.firms.find(f => f.slug === target) || {}).name || target) : '';
+  btn.disabled = true; btn.textContent = 'Connecting\u2026';
   try {
-    const r = await fetch('/api/form', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 'form-name': pr.interest ? 'tender-pro-interest' : 'upgrade-request',
-        product: pr.label + (pr.per ? ' (' + pr.per + ')' : ''), price: pr.interest ? '' : 'UGX ' + pr.price.toLocaleString(),
-        firm: firmName, target: pr.needs === 'firm' ? '' : target,
-        sectors: (chosenSectors || []).join(', '), name: payload.name, phone: payload.phone, email: payload.email }) });
+    const r = await fetch('/api/pay', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     const out = await r.json().catch(() => ({}));
-    if (r.ok && out.ok !== false) {
-      say(false, pr.interest ? '<b>Thank you \u2014 you are on the list.</b> We will email you the day Tender Pro opens.'
-                             : '<b>Thank you \u2014 we have your request.</b> An invoice will reach you within one working day.');
-      btn.textContent = pr.interest ? 'Registered' : 'Request sent';
-      track(pr.interest ? 'tender_pro_interest' : 'upgrade_request', { product });
+    if (out.ok && out.link) {
+      track('checkout_redirect', { product, value: pr.price });
+      location.href = out.link;
       return false;
     }
-    say(true, esc(out.error || 'That did not send. Please try again, or call us.'));
+    if (out.manual) {
+      /* Online payment not switched on: send the request to the team so
+         an invoice goes out, and say so. Nothing is lost. */
+      await fetch('/api/form', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.assign({ 'form-name': 'upgrade-request', product: pr.label,
+          price: 'UGX ' + pr.price.toLocaleString() }, payload)) }).catch(() => {});
+      say(false, '<b>Thank you \u2014 we have your request.</b> ' + esc(out.message));
+      btn.textContent = 'Request sent'; track('checkout_manual', { product });
+      return false;
+    }
+    say(true, esc(out.error || 'Something went wrong. Nothing was charged.'));
   } catch (err) {
-    say(true, 'That did not send \u2014 please check your connection and try again.');
+    say(true, 'We could not reach the payment service. Nothing was charged; please try again.');
   }
-  btn.disabled = false; btn.textContent = pr.interest ? 'Register my interest' : 'Send my request';
+  btn.disabled = false; btn.textContent = 'Continue to payment';
   return false;
 }
 
+/* Back from Flutterwave: confirm, and show what switched on. */
+async function showPaymentResult() {
+  const q = new URLSearchParams((location.hash.split('?')[1]) || '');
+  const ref = q.get('ref') || q.get('tx_ref'), tid = q.get('transaction_id'), status = q.get('status');
+  if (!ref) return;
+  const box = checkoutBox();
+  const paint = (ok, title, body) => {
+    box.innerHTML = `<div class="modal-box pay-box" role="dialog" aria-modal="true">
+      <div class="modal-body" style="text-align:center;padding:30px 26px">
+        <div class="pay-icon ${ok ? 'ok' : 'bad'}">${ok ? '\u2713' : '!'}</div>
+        <h3 style="margin:10px 0 8px">${title}</h3><p style="color:var(--slate);line-height:1.6">${body}</p>
+        <button class="btn btn-primary" style="margin-top:14px" onclick="closeCheckout();location.hash='#/home'">Done</button>
+      </div></div>`;
+    box.classList.add('on');
+  };
+  if (status === 'cancelled') return paint(false, 'Payment cancelled', 'Nothing was charged. You can try again whenever you are ready.');
+  paint(true, 'Confirming your payment\u2026', 'This takes a few seconds.');
+  try {
+    const r = await fetch('/api/pay?ref=' + encodeURIComponent(ref) + (tid ? '&transaction_id=' + encodeURIComponent(tid) : ''));
+    const out = await r.json().catch(() => ({}));
+    if (out.ok && out.order && out.order.status === 'paid') {
+      track('purchase', { transaction_id: ref, value: out.order.amount, currency: 'UGX', item: out.order.product });
+      paint(true, 'Payment received \u2014 thank you',
+        `<b>${esc(out.order.label)}</b> is now active. A receipt has gone to your email. ` +
+        (String(out.order.product).startsWith('tier') ? 'Your listing shows its new tier from the next site update, within a few minutes.' : ''));
+    } else {
+      paint(false, 'We could not confirm the payment',
+        'If money left your account, do not pay again \u2014 contact us with reference <b>' + esc(ref) + '</b> and we will sort it out.');
+    }
+  } catch (e) {
+    paint(false, 'We could not confirm the payment yet', 'Reference <b>' + esc(ref) + '</b>. If you were charged, contact us and we will confirm it by hand.');
+  }
+}
 
 function openNominate() {
   const box = document.getElementById('nomModal') || (() => {
@@ -6117,8 +6107,7 @@ function sponsorLink(name, site, slug) {
    tender is the likeliest person in the country to want the next one,
    and without them the page is a dead end.
    ═══════════════════════════════════════════════════════════════ */
-/* Launch version: the only advertising position is the top banner on
-   the directory. */
+/* Launch version: the only advertising position is the homepage banner. */
 function sideAds(prefix) {
   return '';
   return `<div class="ad-unit ad-rectangle ad-sponsored" data-ad="${prefix}-detail-1"></div>
@@ -7777,6 +7766,11 @@ function router() {
   const path = hash.replace(/^#\/?/, '').split('?')[0];
   const parts = path.split('/').filter(Boolean);
 
+  if (parts[0] === 'payment') {
+    showPage('home', { silent: true });
+    if (DATA_READY) showPaymentResult(); else PENDING_ROUTE = true;
+    return;
+  }
 
   // Detail routes
   if (parts[0] === 'tenders' && parts[1]) {
@@ -7944,9 +7938,6 @@ function paintStats() {
   });
   document.querySelectorAll('[data-site-if]').forEach(el => {
     el.hidden = !SITE[el.getAttribute('data-site-if')];
-  });
-  document.querySelectorAll('[data-site-mail-ads]').forEach(a => {
-    a.href = 'mailto:' + SITE.adsEmail; a.textContent = SITE.adsEmail;
   });
   document.querySelectorAll('[data-site-mail]').forEach(a => {
     a.href = 'mailto:' + SITE.email; a.textContent = SITE.email;
