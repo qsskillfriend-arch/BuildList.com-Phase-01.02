@@ -1,0 +1,579 @@
+{
+  "categories": [
+    {
+      "slug": "architecture-design",
+      "name": "Architects & Designers",
+      "cluster": "Design",
+      "onHome": true
+    },
+    {
+      "slug": "quantity-surveying",
+      "name": "Quantity Surveyors",
+      "cluster": "Professionals",
+      "onHome": true
+    },
+    {
+      "slug": "civil-structural",
+      "name": "Civil & Structural Engineers",
+      "cluster": "Professionals",
+      "onHome": true
+    },
+    {
+      "slug": "land-surveying",
+      "name": "Land Surveyors",
+      "cluster": "Professionals",
+      "onHome": true
+    },
+    {
+      "slug": "property-valuers",
+      "name": "Property Valuers",
+      "cluster": "Professionals",
+      "onHome": true
+    },
+    {
+      "slug": "urban-planning",
+      "name": "Urban & Town Planners",
+      "cluster": "Professionals",
+      "onHome": false
+    },
+    {
+      "slug": "general-contracting",
+      "name": "General Contractors",
+      "cluster": "Contractors",
+      "onHome": true
+    },
+    {
+      "slug": "electrical-contracting",
+      "name": "Electrical Contractors",
+      "cluster": "Contractors",
+      "onHome": true
+    },
+    {
+      "slug": "suppliers",
+      "name": "Material Suppliers",
+      "cluster": "Supply",
+      "note": "Merchants and distributors of materials, fittings and equipment.",
+      "onHome": true,
+      "subs": [
+        {
+          "slug": "cement-aggregates",
+          "name": "Cement, Sand & Aggregates"
+        },
+        {
+          "slug": "steel-rebar",
+          "name": "Steel & Rebar"
+        },
+        {
+          "slug": "timber",
+          "name": "Timber & Boards"
+        },
+        {
+          "slug": "roofing",
+          "name": "Roofing Sheets & Accessories"
+        },
+        {
+          "slug": "tiles-sanitary",
+          "name": "Tiles & Sanitaryware"
+        },
+        {
+          "slug": "paints",
+          "name": "Paints & Finishes"
+        },
+        {
+          "slug": "electrical-supplies",
+          "name": "Electrical & Cabling"
+        },
+        {
+          "slug": "plumbing-supplies",
+          "name": "Plumbing & Pipes"
+        },
+        {
+          "slug": "hardware",
+          "name": "General Hardware"
+        },
+        {
+          "slug": "glass-aluminium",
+          "name": "Glass & Aluminium"
+        }
+      ]
+    },
+    {
+      "slug": "plumbing-fire",
+      "name": "Plumbing & Fire Fighting",
+      "cluster": "Contractors",
+      "onHome": true
+    },
+    {
+      "slug": "plant-hire",
+      "cluster": "Trades",
+      "name": "Plant & Equipment Hire",
+      "note": "Excavators, cranes, concrete plant, scaffolding and formwork for hire.",
+      "onHome": false
+    },
+    {
+      "slug": "hvac",
+      "name": "Heating, Ventilation & Air Conditioning",
+      "cluster": "Contractors",
+      "onHome": true
+    },
+    {
+      "slug": "structural-steel",
+      "name": "Aluminium, Steel & Glass Works",
+      "cluster": "Contractors",
+      "onHome": true
+    },
+    {
+      "slug": "interior-design",
+      "cluster": "Trades",
+      "name": "Interior Designers",
+      "note": "Fit-out, joinery, furnishing and interior specification.",
+      "onHome": false
+    },
+    {
+      "slug": "landscaping",
+      "name": "Landscaping & External Works",
+      "cluster": "Contractors",
+      "onHome": false
+    },
+    {
+      "slug": "building-management",
+      "name": "Building Management Systems",
+      "cluster": "Services",
+      "onHome": false
+    },
+    {
+      "slug": "ict-network",
+      "name": "ICT & Networks Specialists",
+      "cluster": "Services",
+      "onHome": false
+    },
+    {
+      "slug": "facility-management",
+      "name": "Facility Managers",
+      "cluster": "Services",
+      "onHome": false
+    },
+    {
+      "slug": "health-safety",
+      "name": "Health & Safety Consultants",
+      "cluster": "Services",
+      "onHome": false
+    },
+    {
+      "slug": "environmental",
+      "name": "Environmental & Sustainability",
+      "cluster": "Services",
+      "onHome": false
+    },
+    {
+      "slug": "real-estate-development",
+      "name": "Real Estate Developers",
+      "cluster": "Development",
+      "onHome": false
+    },
+    {
+      "slug": "tradesmen",
+      "name": "Tradesmen",
+      "cluster": "Trades",
+      "note": "Individual artisans and small crews — masons, welders, carpenters, tilers, painters.",
+      "onHome": true,
+      "subs": [
+        {
+          "slug": "masons",
+          "name": "Masons & Bricklayers"
+        },
+        {
+          "slug": "carpenters",
+          "name": "Carpenters & Joiners"
+        },
+        {
+          "slug": "steel-benders",
+          "name": "Steel Benders & Fixers"
+        },
+        {
+          "slug": "welders",
+          "name": "Welders & Metal Fabricators"
+        },
+        {
+          "slug": "electricians",
+          "name": "Electricians"
+        },
+        {
+          "slug": "plumbers",
+          "name": "Plumbers"
+        },
+        {
+          "slug": "tilers",
+          "name": "Tilers & Terrazzo"
+        },
+        {
+          "slug": "painters",
+          "name": "Painters & Decorators"
+        },
+        {
+          "slug": "roofers",
+          "name": "Roofers"
+        },
+        {
+          "slug": "plasterers",
+          "name": "Plasterers & Screeders"
+        },
+        {
+          "slug": "glaziers",
+          "name": "Glaziers & Aluminium Fitters"
+        },
+        {
+          "slug": "scaffolders",
+          "name": "Scaffolders"
+        },
+        {
+          "slug": "plant-operators",
+          "name": "Plant & Machine Operators"
+        },
+        {
+          "slug": "borehole-drillers",
+          "name": "Borehole & Water Works"
+        },
+        {
+          "slug": "solar-installers",
+          "name": "Solar Installers"
+        },
+        {
+          "slug": "general-labour",
+          "name": "General Labour & Casual Crews"
+        }
+      ]
+    }
+  ],
+  "districts": [
+    {
+      "slug": "kampala",
+      "name": "Kampala"
+    },
+    {
+      "slug": "wakiso",
+      "name": "Wakiso"
+    },
+    {
+      "slug": "mukono",
+      "name": "Mukono"
+    },
+    {
+      "slug": "jinja",
+      "name": "Jinja"
+    },
+    {
+      "slug": "entebbe",
+      "name": "Entebbe"
+    },
+    {
+      "slug": "mbarara",
+      "name": "Mbarara"
+    },
+    {
+      "slug": "gulu",
+      "name": "Gulu"
+    },
+    {
+      "slug": "hoima",
+      "name": "Hoima"
+    },
+    {
+      "slug": "kayunga",
+      "name": "Kayunga"
+    },
+    {
+      "slug": "kabale",
+      "name": "Kabale"
+    },
+    {
+      "slug": "tororo",
+      "name": "Tororo"
+    },
+    {
+      "slug": "luweero",
+      "name": "Luweero"
+    },
+    {
+      "slug": "bushenyi",
+      "name": "Bushenyi"
+    },
+    {
+      "slug": "busia",
+      "name": "Busia"
+    },
+    {
+      "slug": "mbale",
+      "name": "Mbale"
+    }
+  ],
+  "accreditations": [
+    {
+      "slug": "board-registered",
+      "name": "Registered with a statutory board",
+      "note": "ARB, ERB, SRB or the Physical Planners Registration Board",
+      "includes": [
+        "arb",
+        "erb",
+        "srb",
+        "uspe"
+      ]
+    },
+    {
+      "slug": "institution-member",
+      "name": "Member of a professional institution",
+      "note": "UIPE or ISU",
+      "includes": [
+        "uipe",
+        "isu"
+      ]
+    },
+    {
+      "slug": "iso",
+      "name": "ISO certified",
+      "includes": [
+        "iso"
+      ]
+    },
+    {
+      "slug": "ppda",
+      "name": "PPDA registered supplier",
+      "includes": [
+        "ppda"
+      ]
+    }
+  ],
+  "tiers": [
+    {
+      "slug": "platinum",
+      "name": "Platinum",
+      "rank": 0,
+      "price": 1500000,
+      "caps": {
+        "photos": 60,
+        "logo": true,
+        "whatsapp": true,
+        "website": true,
+        "descriptionChars": 5000,
+        "services": 50,
+        "projects": 30,
+        "video": true,
+        "preciseMap": true,
+        "badge": true,
+        "sortBoost": 3,
+        "homepageFeature": true,
+        "leadAlerts": true,
+        "monthlyReport": true,
+        "catalogue": true,
+        "categories": 6,
+        "reviewReply": true,
+        "ratingDisplay": true
+      },
+      "headline": "Lead your field",
+      "tagline": "Maximum visibility for the firms that set the standard.",
+      "highlights": [
+        "On the homepage, in Featured Industry Participants",
+        "First in search results in your categories",
+        "60 photographs and 30 projects",
+        "Listed under up to 6 categories",
+        "A named account contact at BuildList"
+      ]
+    },
+    {
+      "slug": "premium",
+      "name": "Premium",
+      "rank": 1,
+      "price": 400000,
+      "caps": {
+        "photos": 20,
+        "logo": true,
+        "whatsapp": true,
+        "website": true,
+        "descriptionChars": 2000,
+        "services": 25,
+        "projects": 12,
+        "video": true,
+        "preciseMap": true,
+        "badge": true,
+        "sortBoost": 2,
+        "homepageFeature": false,
+        "leadAlerts": true,
+        "monthlyReport": true,
+        "catalogue": true,
+        "categories": 4,
+        "reviewReply": true,
+        "ratingDisplay": true
+      },
+      "headline": "Win the work",
+      "tagline": "For firms that want to be chosen, not just found.",
+      "highlights": [
+        "20 photographs, a video and 12 projects showcased",
+        "Star rating shown on your listing",
+        "Monthly report: who viewed you and who called",
+        "Downloadable company profile or catalogue",
+        "Listed under up to 4 categories",
+        "Placed above Verified in search"
+      ]
+    },
+    {
+      "slug": "verified",
+      "name": "Verified",
+      "rank": 2,
+      "price": 150000,
+      "caps": {
+        "photos": 6,
+        "logo": true,
+        "whatsapp": true,
+        "website": true,
+        "descriptionChars": 800,
+        "services": 10,
+        "projects": 3,
+        "video": false,
+        "preciseMap": true,
+        "badge": true,
+        "sortBoost": 1,
+        "homepageFeature": false,
+        "leadAlerts": true,
+        "monthlyReport": false,
+        "catalogue": false,
+        "categories": 2,
+        "reviewReply": true,
+        "ratingDisplay": false
+      },
+      "headline": "Be trusted",
+      "tagline": "We confirm you are real. Customers can reach you in one tap.",
+      "highlights": [
+        "Verified badge, after we phone and check you",
+        "Your logo on your listing and in search results",
+        "Your logo, website link and 6 photographs",
+        "Quotation requests in your category sent to you",
+        "Placed above free listings in search"
+      ]
+    },
+    {
+      "slug": "free",
+      "name": "Free",
+      "rank": 3,
+      "price": 0,
+      "caps": {
+        "photos": 0,
+        "logo": false,
+        "whatsapp": true,
+        "website": false,
+        "descriptionChars": 200,
+        "services": 3,
+        "projects": 0,
+        "video": false,
+        "preciseMap": false,
+        "badge": false,
+        "sortBoost": 0,
+        "homepageFeature": false,
+        "leadAlerts": false,
+        "monthlyReport": false,
+        "catalogue": false,
+        "categories": 1,
+        "reviewReply": false,
+        "ratingDisplay": false
+      },
+      "headline": "Be found",
+      "tagline": "Your firm in the directory, searchable by anyone looking for your trade.",
+      "highlights": [
+        "Listed and searchable in your category and district",
+        "Customers can call or WhatsApp you in one tap",
+        "Up to 3 services listed"
+      ]
+    }
+  ],
+  "capLabels": {
+    "photos": "Photographs",
+    "logo": "Show logo",
+    "whatsapp": "WhatsApp button",
+    "website": "Website link",
+    "descriptionChars": "Description length",
+    "services": "Services listed",
+    "projects": "Projects listed",
+    "video": "Video on profile",
+    "preciseMap": "Exact map pin",
+    "badge": "Tier badge",
+    "sortBoost": "Search ranking boost",
+    "homepageFeature": "Eligible for homepage strip",
+    "leadAlerts": "Lead alerts",
+    "monthlyReport": "Monthly performance report",
+    "catalogue": "Catalogue download",
+    "categories": "Categories allowed",
+    "reviewReply": "Reply publicly to reviews",
+    "ratingDisplay": "Star rating shown on the listing"
+  },
+  "accreditationBodies": [
+    {
+      "slug": "arb",
+      "name": "ARB Registered",
+      "full": "Architects Registration Board"
+    },
+    {
+      "slug": "erb",
+      "name": "ERB Registered",
+      "full": "Engineers Registration Board"
+    },
+    {
+      "slug": "srb",
+      "name": "SRB Registered",
+      "full": "Surveyors Registration Board"
+    },
+    {
+      "slug": "uipe",
+      "name": "UIPE Member",
+      "full": "Uganda Institution of Professional Engineers"
+    },
+    {
+      "slug": "isu",
+      "name": "ISU Member",
+      "full": "Institution of Surveyors of Uganda"
+    },
+    {
+      "slug": "uspe",
+      "name": "Registered Planner",
+      "full": "Uganda Society of Professional Planners"
+    },
+    {
+      "slug": "iso",
+      "name": "ISO Certified",
+      "full": "International Organization for Standardization"
+    },
+    {
+      "slug": "ppda",
+      "name": "PPDA Listed",
+      "full": "Public Procurement and Disposal of Public Assets Authority"
+    }
+  ],
+  "tenderSectors": [
+    {
+      "slug": "building-works",
+      "name": "Building works"
+    },
+    {
+      "slug": "roads-civil",
+      "name": "Roads & civil works"
+    },
+    {
+      "slug": "water-sanitation",
+      "name": "Water & sanitation"
+    },
+    {
+      "slug": "electrical-mechanical",
+      "name": "Electrical & mechanical"
+    },
+    {
+      "slug": "consultancy",
+      "name": "Consultancy & design"
+    },
+    {
+      "slug": "supplies-equipment",
+      "name": "Supplies & equipment"
+    },
+    {
+      "slug": "maintenance",
+      "name": "Maintenance & renovation"
+    }
+  ]
+}

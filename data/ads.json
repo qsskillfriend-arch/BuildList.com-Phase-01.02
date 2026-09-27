@@ -1,0 +1,167 @@
+{
+  "_readme": "Every ad slot is driven from this file. Slot keys name the page they sit on. Four creative types: image, video, flier and text. linkType controls where a click goes: 'website' (external, nofollow sponsored), 'profile' (their listing on this site — set firmSlug), or 'none' (no link at all, for brand awareness). Every running campaign needs an 'end' date: the advertiser bought a period, not a permanent slot, and the admin blocks a save without one. The Add-your-firm, Privacy and Terms pages carry no advertising. Rotation: several campaigns can share one slot and take turns. Set 'weight' higher to show a campaign more often (a Platinum advertiser might be 3, a filler 1). Every creative in a slot must be the slot's own size — nothing is ever stretched, a mismatch letterboxes. These sample entries are placeholders; replace them before launch.",
+  "slots": {
+    "directory-leaderboard": {
+      "label": "Directory top leaderboard",
+      "size": "970x90",
+      "accepts": "image, flier or video"
+    }
+  },
+  "ads": [
+    {
+      "id": "directory-leaderboard-sample-1",
+      "slot": "directory-leaderboard",
+      "advertiser": "Sample Advertiser 1",
+      "active": true,
+      "start": "2026-09-27",
+      "end": "2026-12-26",
+      "linkType": "none",
+      "link": "",
+      "weight": 1,
+      "sample": true,
+      "image": "images/ads/leaderboard-1.png",
+      "alt": "Placeholder creative 1 for the directory banner"
+    },
+    {
+      "id": "directory-leaderboard-sample-2",
+      "slot": "directory-leaderboard",
+      "advertiser": "Sample Advertiser 2",
+      "active": true,
+      "start": "2026-09-27",
+      "end": "2026-12-26",
+      "linkType": "none",
+      "link": "",
+      "weight": 1,
+      "sample": true,
+      "image": "images/ads/leaderboard-2.png",
+      "alt": "Placeholder creative 2 for the directory banner"
+    },
+    {
+      "id": "directory-leaderboard-sample-3",
+      "slot": "directory-leaderboard",
+      "advertiser": "Sample Advertiser 3",
+      "active": true,
+      "start": "2026-09-27",
+      "end": "2026-12-26",
+      "linkType": "none",
+      "link": "",
+      "weight": 1,
+      "sample": true,
+      "image": "images/ads/leaderboard-3.png",
+      "alt": "Placeholder creative 3 for the directory banner"
+    },
+    {
+      "id": "directory-leaderboard-sample-4",
+      "slot": "directory-leaderboard",
+      "advertiser": "Sample Advertiser 4",
+      "active": true,
+      "start": "2026-09-27",
+      "end": "2026-12-26",
+      "linkType": "none",
+      "link": "",
+      "weight": 1,
+      "sample": true,
+      "image": "images/ads/leaderboard-4.png",
+      "alt": "Placeholder creative 4 for the directory banner"
+    },
+    {
+      "id": "directory-leaderboard-sample-5",
+      "slot": "directory-leaderboard",
+      "advertiser": "Sample Advertiser 5",
+      "active": true,
+      "start": "2026-09-27",
+      "end": "2026-12-26",
+      "linkType": "none",
+      "link": "",
+      "weight": 1,
+      "sample": true,
+      "image": "images/ads/leaderboard-5.png",
+      "alt": "Placeholder creative 5 for the directory banner"
+    },
+    {
+      "id": "directory-leaderboard-sample-6",
+      "slot": "directory-leaderboard",
+      "advertiser": "Sample Advertiser 6",
+      "active": true,
+      "start": "2026-09-27",
+      "end": "2026-12-26",
+      "linkType": "none",
+      "link": "",
+      "weight": 1,
+      "sample": true,
+      "image": "images/ads/leaderboard-6.png",
+      "alt": "Placeholder creative 6 for the directory banner"
+    }
+  ],
+  "packages": [
+    {
+      "slug": "homepage-banner",
+      "name": "Directory Banner",
+      "where": "The top of the directory, above the search bar",
+      "action": "book",
+      "featured": true,
+      "flag": "★ The launch placement",
+      "benefits": [
+        "Seen by every visitor who comes to search for a firm",
+        "The only advertising position on the site at launch",
+        "Rotates with no more than five other brands",
+        "Image, animated flier or short video, all accepted",
+        "Clicks and views reported to you every month",
+        "Change your artwork at any time, free"
+      ],
+      "trial": "Be in front of everyone searching from launch day. Start with one month."
+    },
+    {
+      "slug": "featured-firm",
+      "name": "Featured Firm",
+      "where": "Homepage and the top of your category",
+      "action": "book",
+      "benefits": [
+        "Your firm in Featured Industry Participants on the homepage",
+        "First result when anyone searches your category",
+        "Gold-highlighted listing with logo, photos and WhatsApp",
+        "Only six firms featured at any time"
+      ],
+      "trial": "The fastest way to be seen by clients this month."
+    },
+    {
+      "slug": "newsletter",
+      "name": "Digest Sponsor",
+      "where": "The weekly digest, every Tuesday",
+      "action": "book",
+      "benefits": [
+        "The only sponsor in that week’s digest",
+        "Your logo, a short message and a link, at the top",
+        "Sent to every subscriber: contractors, consultants, buyers",
+        "Open and click figures sent to you after each issue"
+      ],
+      "trial": "Book a single week to test the response."
+    },
+    {
+      "slug": "sponsored-article",
+      "name": "Sponsored Story",
+      "where": "News, the homepage and the digest",
+      "action": "enquire",
+      "benefits": [
+        "Your project, product or expertise, written up with our editors",
+        "A permanent page on BuildList, with your branding throughout",
+        "Featured at the top of News for a full week",
+        "Included in the digest and shared on our social channels"
+      ],
+      "trial": "Content that keeps working long after the campaign."
+    },
+    {
+      "slug": "platinum-bundle",
+      "name": "Launch Partner",
+      "where": "Across the whole site",
+      "action": "enquire",
+      "benefits": [
+        "Directory Banner and Featured Firm together",
+        "Four digest sponsorships and one Sponsored Story a quarter",
+        "A named account manager and a quarterly results review",
+        "First refusal on new advertising positions as they open"
+      ],
+      "trial": "The complete presence, from day one."
+    }
+  ]
+}
